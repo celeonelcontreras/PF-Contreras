@@ -51,7 +51,7 @@ nav {
 .hero-home {
     width: 100%;
     height: 80rem;
-    background-image: url(/img/hero-image.jpg);
+    background-image: url(img/hero-image.jpg);
     margin-top: -1rem;
 }
 
@@ -90,7 +90,7 @@ nav {
 .hero-eventos-torneos-tienda {
     width: 100%;
     height: 40rem;
-    background-image: url(/img/hero-image.jpg);
+    background-image: url(img/hero-image.jpg);
     margin-top: -1rem;
 }
 
