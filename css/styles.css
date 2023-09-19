@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*********************************************************/
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +21,7 @@ a {
 }
 
 .navega {
-  background-color: darkslategray;
+  background-color: darkslategrey;
   height: 4rem;
   text-align: center;
   font-size: 2rem;
@@ -31,7 +32,6 @@ a {
 .navega a {
   color: white;
 }
-
 .navega a:hover {
   color: black;
   font-size: 2.5rem;
@@ -75,7 +75,6 @@ a {
   font-size: 2rem;
   font-weight: 600;
 }
-
 .titulo h2:hover {
   transform: rotate(-7deg);
   color: red;
@@ -215,54 +214,89 @@ a {
   }
 }
 /**************** Tienda ****************/
-.tienda {
-  display: flex;
-  justify-content: space-around;
-  background-color: darkslategrey;
-}
-.tienda .articulo {
+.padre {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10rem;
 }
-.tienda .articulo h2 {
+.padre h1 {
   color: white;
   margin-top: 5rem;
-  font-size: 3rem;
+  font-family: "Kanit", sans-serif;
+  margin-bottom: 7rem;
+}
+.padre .hijo {
+  margin-top: 3rem;
+  margin-bottom: 70rem;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.3rem;
+  margin-bottom: 20rem;
+}
+.padre .hijo .nieto {
+  width: 18rem;
+  height: 75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: first baseline;
+}
+.padre .hijo .nieto h2 {
+  color: white;
+  font-family: "Kanit", sans-serif;
+  margin-bottom: 5rem;
+}
+.padre .hijo .nieto .bisnieto {
+  width: 17rem;
+  height: 17rem;
+  margin: 10px 0;
+}
+.padre .hijo .nieto img {
+  width: 17rem;
+  height: 17rem;
+}
+.padre .hijo .medio {
+  height: 110rem;
 }
 
-@media (max-width: 575px) {
-  .tienda {
+@media (max-width: 500px) {
+  .hijo {
+    margin-top: 3rem;
+    width: 90%;
+    height: 75%;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+  .hijo .nieto {
+    width: 12.5rem;
+    height: 50rem;
+    margin-top: 0.3rem;
+    margin-bottom: 2rem;
+  }
+  .hijo .nieto .bisnieto {
+    width: 12rem;
+    height: 12rem;
+  }
+  .hijo .nieto img {
+    width: 12rem;
+    height: 12rem;
+  }
+  .hijo .medio {
+    height: 7rem;
+    margin-top: 28rem;
+    margin-bottom: 35rem;
+  }
+  h1 {
+    margin-bottom: 10rem;
   }
 }
-.articulo img {
-  width: 15rem;
-  height: 15rem;
-}
-
-@media (max-width: 575px) {
-  .articulo img {
-    width: 100%;
-    height: auto;
-  }
-}
-.col-sm-12 a img {
-  width: 100%;
-  height: 100%;
-}
-
-.col-sm-12 {
-  margin-left: 2%;
-}
-
-.col-xl-4 {
-  margin: 0;
-}
-
 /**************** Producto *******************/
-.contenedor-producto h1 {
+.main-producto {
+  background-color: darkslategrey;
+}
+.main-producto .contenedor-producto h1 {
   font-size: 5rem;
   font-weight: 600;
   color: white;
@@ -270,19 +304,17 @@ a {
   margin-top: 2rem;
   margin-bottom: 5rem;
 }
-
-.col-sm-12 img {
-  width: 100%;
-  height: 100%;
-}
-
-.lista-producto {
+.main-producto .contenedor-producto h1 .container .row .lista-producto {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
+  font-size: 3rem;
+  margin-top: 10rem;
+  margin-left: 5rem;
+  color: white;
 }
-.lista-producto li {
+.main-producto .contenedor-producto h1 .container .row .lista-producto li {
   color: white;
   list-style: none;
   font-size: 4rem;
@@ -296,17 +328,6 @@ a {
     font-size: 4rem;
   }
 }
-.main-producto {
-  background-color: darkslategrey;
-}
-
-.producto ul {
-  font-size: 3rem;
-  margin-top: 10rem;
-  margin-left: 5rem;
-  color: white;
-}
-
 /****************** FOOTER *******************/
 .pie {
   background-color: darkslategrey;
