@@ -214,18 +214,18 @@ a {
   }
 }
 /**************** Tienda ****************/
-.padre {
+.nuestra-coleccion {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.padre h1 {
+.nuestra-coleccion h1 {
   color: white;
   margin-top: 5rem;
   font-family: "Kanit", sans-serif;
   margin-bottom: 7rem;
 }
-.padre .hijo {
+.nuestra-coleccion .productos {
   margin-top: 3rem;
   margin-bottom: 70rem;
   width: 90%;
@@ -234,7 +234,7 @@ a {
   padding: 0.3rem;
   margin-bottom: 20rem;
 }
-.padre .hijo .nieto {
+.nuestra-coleccion .productos .clase-producto {
   width: 18rem;
   height: 75rem;
   display: flex;
@@ -242,26 +242,26 @@ a {
   align-items: center;
   justify-content: first baseline;
 }
-.padre .hijo .nieto h2 {
+.nuestra-coleccion .productos .clase-producto h2 {
   color: white;
   font-family: "Kanit", sans-serif;
   margin-bottom: 5rem;
 }
-.padre .hijo .nieto .bisnieto {
+.nuestra-coleccion .productos .clase-producto .unidad-producto {
   width: 17rem;
   height: 17rem;
   margin: 10px 0;
 }
-.padre .hijo .nieto img {
+.nuestra-coleccion .productos .clase-producto img {
   width: 17rem;
   height: 17rem;
 }
-.padre .hijo .medio {
+.nuestra-coleccion .productos .medio {
   height: 110rem;
 }
 
 @media (max-width: 500px) {
-  .hijo {
+  .productos {
     margin-top: 3rem;
     width: 90%;
     height: 75%;
@@ -269,21 +269,21 @@ a {
     flex-direction: column;
     align-items: center;
   }
-  .hijo .nieto {
+  .productos .clase-producto {
     width: 12.5rem;
     height: 50rem;
     margin-top: 0.3rem;
     margin-bottom: 2rem;
   }
-  .hijo .nieto .bisnieto {
+  .productos .clase-producto .unidad-producto {
     width: 12rem;
     height: 12rem;
   }
-  .hijo .nieto img {
+  .productos .clase-producto img {
     width: 12rem;
     height: 12rem;
   }
-  .hijo .medio {
+  .productos .medio {
     height: 7rem;
     margin-top: 28rem;
     margin-bottom: 35rem;
@@ -343,4 +343,4 @@ a {
   width: 100%;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=style.css.map */
