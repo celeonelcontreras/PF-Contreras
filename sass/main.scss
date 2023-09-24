@@ -64,8 +64,10 @@ a {
 
 .hero-home {
     width: 100%;
-    height: 80rem;
+    height: 100rem;
     background-image: url(../img/hero-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-top: -1rem;    
 }
 
@@ -82,18 +84,20 @@ a {
     }
     h2 {
         color: variables.$fondo-principal;
-    font-size: 2rem;
-    font-weight: 600;
-    &:hover {
-        transform: rotate(-7deg);
-        color: red;
-    }
+        font-size: 2rem;
+        font-weight: 600;
+        &:hover {
+            transform: rotate(-7deg);
+            color: red;
+        }
     }
 }
 
 @media (max-width: 575px) {
     .titulo h2 {
         color: white;
+        font-size: 1.5rem;
+        margin-top: -5rem;
     }
     .titulo h1 {
         font-size: 4rem;
@@ -130,14 +134,10 @@ a {
 
 /*************** Hero Eventos Torneos Tienda ***************/
 
-.hero-eventos-torneos-tienda {
-    width: 100%;
+.hero-small {
+    @extend .hero-home;
     height: 40rem;
-    background-image: url(../img/hero-image.jpg);
-    margin-top: -1rem;
-    .titulo--white h1{
-        color: white;
-    }
+    padding-top: 10rem;    
 }
 
 
@@ -252,6 +252,9 @@ img {
     flex-direction: column;
     align-items: center;
     background-color: variables.$fondo-principal;
+    img {
+        height: 60rem;
+    }
     h3 {
         color: white;
         font-size: 5rem;

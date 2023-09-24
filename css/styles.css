@@ -51,10 +51,12 @@ a {
 }
 
 /*************** Hero Home ***************/
-.hero-home {
+.hero-home, .hero-small {
   width: 100%;
-  height: 80rem;
+  height: 100rem;
   background-image: url(../img/hero-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-top: -1rem;
 }
 
@@ -83,6 +85,8 @@ a {
 @media (max-width: 575px) {
   .titulo h2 {
     color: white;
+    font-size: 1.5rem;
+    margin-top: -5rem;
   }
   .titulo h1 {
     font-size: 4rem;
@@ -112,14 +116,9 @@ a {
   }
 }
 /*************** Hero Eventos Torneos Tienda ***************/
-.hero-eventos-torneos-tienda {
-  width: 100%;
+.hero-small {
   height: 40rem;
-  background-image: url(../img/hero-image.jpg);
-  margin-top: -1rem;
-}
-.hero-eventos-torneos-tienda .titulo--white h1 {
-  color: white;
+  padding-top: 10rem;
 }
 
 /****************** MAIN ******************/
@@ -150,7 +149,7 @@ a {
 /**************** Galería de imágenes en Eventos ***************/
 .grupo-fotos {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .padre {
@@ -166,7 +165,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}   
+}
 
 .nieto {
   width: 18%;
@@ -179,65 +178,51 @@ img {
 }
 
 @media (max-width: 1100px) {
-  .grupo-fotos {
-    margin-top: 5rem;
-    margin-bottom: 17rem;
+  .hijo {
+    width: 100%;
+    height: 100rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-
-  .hijo {      
-      width: 100%;    
-      height: 100rem;      
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-
   .nieto {
-      width: 100%;
-      height: 23rem;
+    width: 100%;
+    height: 23rem;
   }
-
   img {
-      width: 100%;
-      height: 23rem;
+    width: 100%;
+    height: 23rem;
   }
 }
-
 @media (max-width: 465px) {
-  .grupo-fotos {
-    margin-top: 11rem;
-    margin-bottom: -12rem;
-  }
-  
   .padre {
-      height: 180rem;
+    height: 180rem;
   }
-
-  .hijo {      
-      width: 100%;    
-      height: 75rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  .hijo {
+    width: 100%;
+    height: 75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-
   .nieto {
-      width: 100%;
-      height: 15rem;
+    width: 100%;
+    height: 15rem;
   }
-
   img {
-      width: 100%;
-      height: 15rem;
+    width: 100%;
+    height: 15rem;
   }
 }
-
 /************* Torneos **************/
 .torneos-main {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: darkslategrey;
+}
+.torneos-main img {
+  height: 60rem;
 }
 .torneos-main h3 {
   color: white;
@@ -404,4 +389,4 @@ img {
   width: 100%;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.css.map */
