@@ -171,6 +171,14 @@ a {
   width: 90%;
 }
 
+@media (max-width: 780px) {
+  .grupo-fotos div {
+    width: 100%;
+  }
+  .grupo-fotos div img {
+    width: 100%;
+  }
+}
 /************* Torneos **************/
 .torneos-main {
   display: flex;
@@ -338,7 +346,7 @@ a {
   justify-content: space-around;
   text-align: center;
   font-size: 2rem;
-  color: black;
+  color: skyblue;
   margin: 0;
 }
 
