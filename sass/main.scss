@@ -44,11 +44,14 @@ a {
     }
 }
 
+
+
 @media (max-width: 575px) {
     .navega {
         height: 10rem;
     }
 }
+
 
 
 /***********Animación a algunos títulos***********/
@@ -349,49 +352,42 @@ a {
 
 
 /**************** Producto *******************/
+.navega-producto {
+    @extend .navega;
+    padding-top: 1rem;    
+}
 
 .main-producto {
-    background-color: variables.$fondo-principal;
-    .contenedor-producto {
-        h1 {
-            font-size: 5rem;
-            font-weight: 600;
-            color: white;
+    h1 {
+        color: skyblue;
+        text-align: center;
+        font-size: 5rem;
+        margin: 5rem 0 10rem 0;        
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 16rem;
+        div {
+            width: 50rem;
+            height: 60rem;
+            margin-bottom: 17rem;
+            img {
+                width: 50rem;
+                height: 60rem;
+            }
+        }
+        ul {
             text-align: center;
-            margin-top: 2rem;
-            margin-bottom: 5rem;
-            .container {
-                .row {
-                    .lista-producto {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: left;
-                        font-size: 3rem;
-                        margin-top: 10rem;
-                        margin-left: 5rem;
-                        color: white;
-                        li {
-                            color: white;
-                            list-style: none;
-                            font-size: 4rem;
-                        }
-                    }
-                }
+            li {
+                color: white;
+                list-style: none;
+                font-size: 4rem;
             }
         }
     }
 }
-
-@media (max-width: 575px) {
-    .lista-producto li {
-        font-size: 2rem;
-    }
-    .contenedor-producto h1 {
-        font-size: 4rem;
-    }    
-}
-
 /****************** FOOTER *******************/
 
 

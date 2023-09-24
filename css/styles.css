@@ -20,7 +20,7 @@ a {
   text-decoration: none;
 }
 
-.navega {
+.navega, .navega-producto {
   background-color: darkslategrey;
   height: 4rem;
   text-align: center;
@@ -29,17 +29,17 @@ a {
   position: sticky;
   top: 0rem;
 }
-.navega a {
+.navega a, .navega-producto a {
   color: white;
 }
-.navega a:hover {
+.navega a:hover, .navega-producto a:hover {
   color: black;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
 @media (max-width: 575px) {
-  .navega {
+  .navega, .navega-producto {
     height: 10rem;
   }
 }
@@ -304,41 +304,40 @@ a {
   }
 }
 /**************** Producto *******************/
-.main-producto {
-  background-color: darkslategrey;
+.navega-producto {
+  padding-top: 1rem;
 }
-.main-producto .contenedor-producto h1 {
-  font-size: 5rem;
-  font-weight: 600;
-  color: white;
+
+.main-producto h1 {
+  color: skyblue;
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 5rem;
+  font-size: 5rem;
+  margin: 5rem 0 10rem 0;
 }
-.main-producto .contenedor-producto h1 .container .row .lista-producto {
+.main-producto article {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: left;
-  font-size: 3rem;
-  margin-top: 10rem;
-  margin-left: 5rem;
-  color: white;
+  margin-bottom: 16rem;
 }
-.main-producto .contenedor-producto h1 .container .row .lista-producto li {
+.main-producto article div {
+  width: 50rem;
+  height: 60rem;
+  margin-bottom: 17rem;
+}
+.main-producto article div img {
+  width: 50rem;
+  height: 60rem;
+}
+.main-producto article ul {
+  text-align: center;
+}
+.main-producto article ul li {
   color: white;
   list-style: none;
   font-size: 4rem;
 }
 
-@media (max-width: 575px) {
-  .lista-producto li {
-    font-size: 2rem;
-  }
-  .contenedor-producto h1 {
-    font-size: 4rem;
-  }
-}
 /****************** FOOTER *******************/
 .pie {
   background-color: darkslategrey;
