@@ -22,12 +22,11 @@ a {
 
 .navega, .navega-producto {
   background-color: darkslategrey;
-  height: 4rem;
+  height: 3.5rem;
   text-align: center;
   font-size: 2rem;
-  margin-top: -1rem;
   position: sticky;
-  top: 0rem;
+  margin-top: 0.5rem;
 }
 .navega a, .navega-producto a {
   color: white;
@@ -344,7 +343,7 @@ a {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: skyblue;
   margin: 0;
 }
