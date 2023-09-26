@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/*********************************************************/
+/********************* Variables *********************/
+/********************* Mixin *************************/
+/********************* General ***********************/
 * {
   margin: 0;
   padding: 0;
@@ -24,15 +26,16 @@ a {
   height: 3.5rem;
   text-align: center;
   font-size: 2rem;
-  position: sticky;
   margin-top: 0.5rem;
 }
-.navega a, .navega-producto a {
+.navega .row div, .navega-producto .row div {
+  margin-top: -0.5rem;
+}
+.navega .row div a, .navega-producto .row div a {
   color: white;
 }
-.navega a:hover, .navega-producto a:hover {
+.navega .row div a:hover, .navega-producto .row div a:hover {
   color: black;
-  font-size: 2.5rem;
   font-weight: bold;
 }
 
@@ -78,6 +81,7 @@ a {
   color: darkslategrey;
   font-size: 2rem;
   font-weight: 600;
+  color: white;
 }
 .titulo h2:hover {
   transform: rotate(-7deg);
@@ -90,7 +94,7 @@ a {
     margin-top: -5rem;
   }
   .titulo h1 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 /*Animación cambio de color en el título*/
@@ -121,13 +125,27 @@ a {
   height: 34rem;
   padding-top: 5rem;
 }
+.hero-small .titulo h2 {
+  color: darkslategrey;
+}
+.hero-small .titulo h2:hover {
+  transform: rotate(-7deg);
+  color: red;
+}
 
 @media (max-width: 780px) {
+  .hero-small .titulo {
+    margin-top: -4rem;
+  }
   .hero-small .titulo h1 {
     color: white;
   }
   .hero-small .titulo h2 {
     color: white;
+  }
+  .hero-small .titulo h2:hover {
+    transform: rotate(-7deg);
+    color: red;
   }
 }
 /****************** MAIN ******************/
@@ -160,15 +178,15 @@ a {
 /**************** Galería de imágenes en Eventos ***************/
 .grupo-fotos {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 10rem 0;
 }
 .grupo-fotos div {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 90%;
 }
 .grupo-fotos div img {
@@ -186,9 +204,10 @@ a {
 /************* Torneos **************/
 .torneos-main {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
   background-color: darkslategrey;
 }
 .torneos-main img {
@@ -240,8 +259,11 @@ a {
 }
 .nuestra-coleccion h1 {
   color: white;
-  margin-top: 5rem;
   font-family: "Dela Gothic One", "cursive";
+  color: skyblue;
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 5rem;
   margin-bottom: 7rem;
 }
 .nuestra-coleccion .productos {
@@ -281,7 +303,6 @@ a {
 
 @media (max-width: 500px) {
   .productos {
-    margin-top: 3rem;
     width: 90%;
     height: 75%;
     display: flex;
@@ -313,7 +334,13 @@ a {
 }
 /**************** Producto *******************/
 .navega-producto {
-  padding-top: 1rem;
+  margin-top: 0;
+  padding-top: 0.3rem;
+  background-color: white;
+}
+.navega-producto .row div a {
+  color: darkslategrey;
+  font-weight: 700;
 }
 
 .main-producto h1 {
@@ -321,6 +348,7 @@ a {
   text-align: center;
   font-size: 5rem;
   margin: 5rem 0 10rem 0;
+  font-family: "Dela Gothic One", "cursive";
 }
 .main-producto article {
   display: flex;
@@ -330,12 +358,12 @@ a {
 }
 .main-producto article div {
   width: 50rem;
-  height: 60rem;
+  height: 50rem;
   margin-bottom: 17rem;
 }
 .main-producto article div img {
   width: 50rem;
-  height: 60rem;
+  height: 50rem;
 }
 .main-producto article ul {
   text-align: center;
@@ -346,6 +374,24 @@ a {
   font-size: 4rem;
 }
 
+@media (max-width: 1024px) {
+  .main-producto article div {
+    margin-bottom: 5rem;
+  }
+}
+@media (max-width: 500px) {
+  .main-producto h1 {
+    font-size: 4rem;
+  }
+  .main-producto article div {
+    width: 45rem;
+    height: 47rem;
+  }
+  .main-producto article div img {
+    width: 45rem;
+    height: 47rem;
+  }
+}
 /****************** FOOTER *******************/
 .pie {
   background-color: darkslategrey;
@@ -359,6 +405,27 @@ a {
 
 .row {
   width: 100%;
+}
+
+/**************** Botón UP ******************/
+.contenedor-boton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rem;
+}
+.contenedor-boton .boton {
+  background-color: white;
+  width: 10em;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-boton .boton a {
+  font-family: "Dela Gothic One", "cursive";
+  font-size: 2rem;
+  color: darkslategrey;
 }
 
 /*# sourceMappingURL=styles.css.map */

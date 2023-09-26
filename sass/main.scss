@@ -1,6 +1,26 @@
+/********************* Variables *********************/
 @use "partials/variables";
 
-/*********************************************************/
+/********************* Mixin *************************/
+
+@mixin d-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin d-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin sizes($width, $height) {
+	width: $width;
+    height: $height;
+}
+
+/********************* General ***********************/
 
 * {
     margin: 0;
@@ -30,16 +50,21 @@ a {
     height: 3.5rem;
     text-align: center;
     font-size: 2rem;
-    position: sticky;
     margin-top: .5rem;
-    a {
-        color: white;
-        &:hover {
-    color: black;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
+    .row {
+        div {
+            margin-top: -.5rem;
+            a {
+                color: variables.$color-tipografia;
+                &:hover {
+            color: variables.$color-tipografia-third;
+            font-weight: bold;
+        }
+            }
+        }
     }
+
+    
 }
 
 
@@ -64,8 +89,7 @@ a {
 /*************** Hero Home ***************/
 
 .hero-home {
-    width: 100%;
-    height: 100rem;
+    @include sizes (100%, 100rem);
     background-image: url(../img/hero-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,9 +97,7 @@ a {
 }
 
 .titulo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include d-column-center;
     h1 {
         margin-top: 20rem;
         font-size: 7rem;
@@ -91,9 +113,10 @@ a {
         color: variables.$fondo-principal;
         font-size: 2rem;
         font-weight: 600;
+        color: variables.$color-tipografia;
         &:hover {
             transform: rotate(-7deg);
-            color: red;
+            color: variables.$color-tipografia-hover;
         }
     }
 }
@@ -104,7 +127,7 @@ a {
         margin-top: -5rem;
     }
     .titulo h1 {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 }
 
@@ -142,16 +165,30 @@ a {
     @extend .hero-home;
     height: 34rem;
     padding-top: 5rem;
+    .titulo {
+        h2 {
+            color: variables.$color-tipografia-second;
+            &:hover {
+                transform: rotate(-7deg);
+                color: variables.$color-tipografia-hover;
+            }
+        }
+    }
 }
 
 @media (max-width: 780px) {
     .hero-small {
         .titulo {
+            margin-top: -4rem;
             h1 {
-                color: white;
+                color: variables.$color-tipografia;
             }
             h2 {
-                color: white;
+                color: variables.$color-tipografia;
+                &:hover {
+                    transform: rotate(-7deg);
+                    color: variables.$color-tipografia-hover;
+                }
             }
         }
     }
@@ -168,12 +205,10 @@ a {
     display: flex;
     justify-content: center;
     .nosotros {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include d-column-center;
         font-family: variables.$fuente-principal;
         background-color: variables.$fondo-principal;
-        color: white;
+        color: variables.$color-tipografia;
         width: 50%;
         h2 {
             font-size: 3rem;
@@ -193,15 +228,11 @@ a {
 /**************** Galería de imágenes en Eventos ***************/
 
 .grupo-fotos {
-    display: flex;
+    @include d-center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: 10rem 0;
     div {
-        display: flex;
-        align-items: center;
-    justify-content: center;
+        @include d-center;
         width: 90%;
         img {
             width: 90%;
@@ -224,16 +255,15 @@ a {
 /************* Torneos **************/
 
 .torneos-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include d-center;
     text-align: center;
+    flex-direction: column;
     background-color: variables.$fondo-principal;
     img {
         height: 60rem;
     }
     h3 {
-        color: white;
+        color: variables.$color-tipografia;
         font-size: 5rem;
         margin-top: 8rem;
         margin-bottom: 4rem;
@@ -241,13 +271,13 @@ a {
         text-align: center;
     }
     ul {
-        color: white;
+        color: variables.$color-tipografia;
         font-size: 3rem;
         margin-bottom: 3rem;
         font-family: variables.$fuente-secundaria;
     }
     p {
-        color: white;
+        color: variables.$color-tipografia;
         font-size: 2rem;
         margin-bottom: 10rem;
         font-family: variables.$fuente-secundaria;
@@ -278,13 +308,14 @@ a {
 /**************** Tienda ****************/
 
 .nuestra-coleccion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include d-column-center;
     h1 {
-        color: white;
-        margin-top: 5rem;
+        color: variables.$color-tipografia;
         font-family: variables.$fuente-principal;
+        color: variables.$color-tipografia-four;
+        font-size: 5rem;
+        text-align: center;
+        margin-top: 5rem;
         margin-bottom: 7rem;
     }
     .productos {        
@@ -296,25 +327,20 @@ a {
         padding: .3rem;
         margin-bottom: 20rem;
         .clase-producto {        
-            width: 18rem;
-            height: 75rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include sizes (18rem, 75rem);
+            @include d-column-center;
             justify-content: first baseline;
             h2 {
-                color: white;
+                color: variables.$color-tipografia;
                 font-family: variables.$fuente-principal;
                 margin-bottom: 5rem;
             }
             .unidad-producto {
-                width: 17rem;
-                height: 17rem;
+                @include sizes (17rem, 17rem);
                 margin: 10px 0;
             }
             img {
-                width: 17rem;
-                height: 17rem;
+                @include sizes (17rem, 17rem);
             }
         }        
         .medio {
@@ -325,24 +351,17 @@ a {
 
 @media ( max-width : 500px ) {
     .productos {
-        margin-top: 3rem;
-        width: 90%;
-        height: 75%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;                    
+        @include sizes (90%, 75%);
+        @include d-column-center;                 
         .clase-producto {        
-            width: 12.5rem;
-            height: 50rem;
+            @include sizes (12.5rem, 50rem);
             margin-top: .3rem;
             margin-bottom: 2rem;
             .unidad-producto {
-                width: 12rem;
-                height: 12rem;
+                @include sizes (12rem, 12rem);
             }
             img {
-                width: 12rem;
-                height: 12rem;
+                @include sizes (12rem, 12rem);
             }        
         }
         .medio {
@@ -362,36 +381,69 @@ a {
 /**************** Producto *******************/
 .navega-producto {
     @extend .navega;
-    padding-top: 1rem;    
+    margin-top: 0;
+    padding-top: .3rem;
+    background-color: variables.$color-tipografia;  
+    .row {
+        div {
+            a {
+                color: variables.$color-tipografia-second;
+                font-weight: 700;
+            }
+        }
+    }
+
 }
 
 .main-producto {
     h1 {
-        color: skyblue;
+        color: variables.$color-tipografia-four;
         text-align: center;
         font-size: 5rem;
-        margin: 5rem 0 10rem 0;        
+        margin: 5rem 0 10rem 0;
+        font-family: variables.$fuente-principal;        
     }
     article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include d-column-center;
         margin-bottom: 16rem;
         div {
-            width: 50rem;
-            height: 60rem;
+            @include sizes (50rem, 50rem);
             margin-bottom: 17rem;
             img {
-                width: 50rem;
-                height: 60rem;
+                @include sizes (50rem, 50rem);
             }
         }
         ul {
             text-align: center;
             li {
-                color: white;
+                color: variables.$color-tipografia;
                 list-style: none;
                 font-size: 4rem;
+            }
+        }
+    }
+}
+@media ( max-width : 1024px ) {
+    .main-producto {
+        article {
+            div {
+                margin-bottom: 5rem;
+            }
+        }
+    }
+}
+
+@media ( max-width : 500px ) {
+    .main-producto {
+        h1 {
+            font-size: 4rem;
+        }
+        article {
+            div {
+                @include sizes (45rem, 47rem);
+                img {
+                    @include sizes (45rem, 47rem);
+                }
             }
         }
     }
@@ -405,10 +457,29 @@ a {
     justify-content: space-around;
     text-align: center;
     font-size: 1.5rem;
-    color: skyblue;
+    color: variables.$color-tipografia-four;
     margin: 0;
 }
 
 .row {
     width: 100%;
 }
+
+/**************** Botón UP ******************/
+
+.contenedor-boton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+    .boton {
+        background-color: variables.$fondo-second;
+        @include sizes (10em, 10rem);
+        border-radius: 50%;
+        @include d-center;
+        a {
+            font-family: variables.$fuente-principal;
+            font-size: 2rem;
+            color: variables.$color-tipografia-second;
+        }
+    }
+    }
